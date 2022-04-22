@@ -1,0 +1,92 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --border-color: #03e9f4;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.flash-btn {
+  letter-spacing: 2px;
+  font-size: 40px;
+  user-select: none;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  color: var(--border-color);
+  overflow: hidden;
+}
+
+.flash-btn:hover {
+  color: white;
+  border-radius: 5px;
+}
+
+.flash-btn span {
+  position: absolute;
+  display: block;
+  background-color: var(--border-color);
+}
+
+.top,
+.bottom {
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.left,
+.right {
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: scaleY(0);
+}
+
+.top {
+  top: 0;
+  transform: scaleX(0);
+  transition-delay: 0.2s;
+}
+
+.left {
+  left: 0;
+  transition-delay: 0.3s;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.right {
+  right: 0;
+  transition-delay: 0.1s;
+}
+
+.flash-btn span {
+  transition: transform 0.1s ease-in-out;
+}
+
+.flash-btn:hover .right {
+  transform: scaleY(1);
+  transform-origin: bottom center;
+}
+
+.flash-btn:hover .left {
+  transform: scaleY(1);
+  transform-origin: top center;
+}
+
+.flash-btn:hover .top {
+  transform: scaleX(1);
+  transform-origin: bottom center;
+}

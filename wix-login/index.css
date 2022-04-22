@@ -1,0 +1,413 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+a {
+  text-decoration: none;
+  color: #459fed;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #459fed !important;
+  text-decoration: underline;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.header {
+  height: 22vh;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.login {
+  height: 50vh;
+}
+
+.caption {
+  text-align: center;
+}
+
+.caption h1 {
+  font-family: helvetica;
+  font-weight: 500;
+  margin-bottom: 17px;
+  font-size: 56px;
+}
+
+.caption p {
+  font-size: 20px;
+  font-family: HelveticaNeueW01-45Ligh, HelveticaNeueW02-45Ligh,
+    HelveticaNeueW10-45Ligh, sans-serif;
+}
+
+form {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.left {
+  width: 50%;
+  padding: 15px 50px 15px 0;
+  box-sizing: border-box;
+  border-right: 1px solid black;
+  display: inline-block;
+}
+
+.left input {
+  color: #162d3d;
+}
+
+.email,
+.password {
+  border-bottom: solid 1px #e1e1e1;
+  position: relative;
+  width: 360px;
+}
+
+.email::after,
+.password::after {
+  content: "電子信箱";
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  left: 18px;
+  z-index: -1;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.password::after {
+  content: "密碼";
+}
+
+.email.focus::after,
+.password.focus::after {
+  bottom: 40px;
+  font-size: 16px;
+}
+
+.email input,
+.password input {
+  padding: 15px 0 15px 18px;
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.line {
+  content: "";
+  height: 2px;
+  background-color: #3899ec;
+  bottom: -1.5px;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+.remember_me {
+  display: inline-block;
+  background-color: #3899ec;
+  width: 20px;
+  border-radius: 4px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.remember_me:hover {
+  opacity: 1;
+}
+
+.iconfont.checked::after {
+  content: "\e65e";
+  display: inline-block;
+}
+
+.iconfont {
+  color: white;
+  display: inline-block;
+}
+
+.btn {
+  margin-top: 30px;
+}
+
+.btn button {
+  border: none;
+  width: 168px;
+  color: #3899ec;
+  background-color: transparent;
+  outline: none;
+  box-shadow: inset 0 0 0 1px #3899ec;
+  height: 43px;
+  font-size: 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-left: 7px;
+  transition: background-color 0.2s;
+}
+
+.btn button:hover {
+  color: white;
+  background-color: #3899ec;
+}
+
+.right {
+  width: calc(50% - 1px);
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  padding-left: 80px;
+  top: 15px;
+  bottom: 15px;
+}
+
+.right .right-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right .right-wrapper > div {
+  height: 50px;
+}
+
+.right .right-wrapper .img {
+  border: 1px solid #3b5998;
+  border-right: none;
+  width: 40px;
+  box-sizing: border-box;
+  height: 50px;
+  float: left;
+  text-align: center;
+  line-height: 50px;
+}
+
+.right .right-wrapper .text {
+  float: left;
+  background-color: #3b5998;
+  color: white;
+  width: 270px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.text span {
+  line-height: 50px;
+}
+
+.google .text {
+  background-color: #3899ec !important;
+}
+
+.google .img {
+  border-color: #3899ec;
+}
+
+.footer {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+  position: relative;
+  z-index: 999;
+}
+
+@media screen and (max-width: 832px) {
+  .header {
+    padding: 0;
+    height: 10vh;
+    padding-left: 20px;
+    margin-bottom: 50px;
+  }
+
+  .caption h1 {
+    font-size: 40px;
+  }
+
+  .caption p {
+    font-size: 16px;
+  }
+
+  .caption {
+    margin-bottom: 30px;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    padding: 0;
+    width: 100%;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  .right-wrapper {
+    position: relative !important;
+    margin: 0 auto;
+    width: 340px;
+    top: 0 !important;
+    transform: translate(0, 0) !important;
+  }
+
+  .text {
+    width: 300px !important;
+  }
+
+  form {
+    height: 300px;
+  }
+
+  .footer {
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  .mobile_display {
+    display: block !important;
+  }
+
+  .mobile_display > p {
+    width: 340px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+  }
+
+  .mobile_display > p::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 28%;
+  }
+
+  .mobile_display > p::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 28%;
+  }
+
+  .mobile_display .email::after,
+  .mobile_display .password::after {
+    font-size: 16px;
+  }
+
+  .mobile_display .email,
+  .mobile_display .password {
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  .mobile_display .mobile-wrapper {
+    transition: top 0.3s linear;
+    position: relative;
+    top: 0;
+  }
+
+  .right.mobile {
+    opacity: 0;
+  }
+
+  .mobile_display .email_tip.mobile {
+    display: none !important;
+  }
+
+  .forget_pwd {
+    text-align: right;
+    width: 340px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  .email_click_display.display {
+    display: block !important;
+  }
+
+  .confirm {
+    width: 360px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .confirm button {
+    border: none;
+    background-color: #3899ec;
+    font-size: 16px;
+    color: white;
+    box-shadow: inset 0 0 0 1px #3899ec;
+    border-radius: 999px;
+    width: 100%;
+    height: 54px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    outline: none;
+  }
+
+  .confirm button:hover {
+    opacity: 0.7;
+  }
+
+  .mobile_footer {
+    width: 360px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  .mobile_footer div[class="fr"] {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid #3899ec;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile_footer .fl {
+    line-height: 44px;
+  }
+}
+
+.email_click_display {
+  display: none;
+}
+
+.mobile_display {
+  display: none;
+  margin-top: 50px;
+}

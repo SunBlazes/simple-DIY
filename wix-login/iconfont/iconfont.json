@@ -1,0 +1,16 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2383461",
+      "name": "勾",
+      "font_class": "gou",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    }
+  ]
+}

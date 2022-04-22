@@ -1,0 +1,56 @@
+:root {
+  --bgcolor: linear-gradient(to right, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stream-light {
+  width: 300px;
+  height: 100px;
+  background-image: var(--bgcolor);
+  border-radius: 50px;
+  background-size: 400%;
+  cursor: pointer;
+  background-position: 0 0;
+  position: relative;
+}
+
+.stream-light::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-image: var(--bgcolor);
+  background-size: 400%;
+  cursor: pointer;
+  background-position: 0 0;
+  border-radius: 55px;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+.stream-light:hover {
+  animation: stream 12s infinite;
+}
+
+.stream-light:hover::before {
+  animation: stream 12s infinite;
+}
+
+@keyframes stream {
+  100% {
+    background-position: -400%;
+  }
+}

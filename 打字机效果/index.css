@@ -1,0 +1,30 @@
+h1::after {
+  background: url("./bgc.jpg") no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 400%;
+  background-position: center;
+  content: attr(data-name);
+  position: absolute;
+  font-size: 75px;
+  color: transparent;
+  width: 0px;
+  white-space: nowrap;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  transition: none;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 75px;
+  display: inline-block;
+}
+h1:hover::after {
+  transition: width 2s linear;
+  width: 100%;
+}

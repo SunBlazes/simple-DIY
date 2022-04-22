@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link
+		  rel="stylesheet"
+		  type="text/css"
+		  href="index.css"
+		/>
+		<script
+		  src="vue.js"
+		  type="text/javascript"
+		  charset="utf-8"
+		></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div class="svg">
+				<svg
+				  :width='w'
+				  :height='h'
+				>
+					<circle
+					  fill='transparent'
+					  :stroke-width='strokeWidth'
+					  stroke='#ccc'
+					  :r='radius'
+					  :cx='cx'
+					  :cy='cy'
+					  :stroke-dasharray='strokeDasharray'
+					></circle>
+					<!-- fill为填充颜色 -->
+					<!-- stroke-width边框宽度 -->
+					<!-- stroke边框颜色 -->
+					<!-- r:radius 半径 -->
+					<!-- cx 圆心x位置-->
+					<!-- cy 圆心y位置-->
+					<!-- stroke-dasharray 在边框持续建立范围-->
+					<!-- stroke-dashoffset 偏移 -->
+					<!-- stroke-linecap:round 圆角 -->
+					<circle
+					  fill='transparent'
+					  :stroke-width='strokeWidth'
+					  stroke='#7FFFD4'
+					  :r='radius'
+					  :cx='cx'
+					  :cy='cy'
+					  :stroke-dasharray='strokeDasharray'
+					  :stroke-dashoffset='strokeDashoffset'
+					  class='circle'
+					  stroke-linecap='round'
+					></circle>
+				</svg>
+				<span>{{number}}</span>
+			</div>
+			<button @click='animate'>animate</button>
+		</div>
+		<script
+		  src="index.js"
+		  type="text/javascript"
+		  charset="utf-8"
+		></script>
+	</body>
+
+</html>

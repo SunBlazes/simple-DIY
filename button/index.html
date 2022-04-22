@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="index.css">
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="checkbox">
+			<div class="inner">
+				<div class="toggle"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$('.toggle').click(function() {
+					$('.inner').toggleClass('active');
+				})
+			})
+		</script>
+	</body>
+</html>

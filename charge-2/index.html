@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link
+		  rel="stylesheet"
+		  href="index.css"
+		>
+	</head>
+	<body>
+		<div class="box">
+			<div class="number">0%</div>
+			<div class="contrast">
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<span class="bubble"></span>
+				<div class="bubble-home"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let number = document.querySelector(".number");
+			function animate() {
+				let start = 10000;
+				number.innerText = start / 100 + "%";
+				let num = 0;
+				let timer = setInterval(() => {
+					if (start >= 10000) {
+						number.innerHTML = 100 + '%';
+						start = 0;
+						clearInterval(timer);
+						alert('充电完成');
+					} else {
+						start += 1; 
+						num = (start / 100).toFixed(2);
+						number.innerHTML = num + '%';
+					}
+				}, 100);
+			}
+			animate()
+		</script>
+	</body>
+</html>

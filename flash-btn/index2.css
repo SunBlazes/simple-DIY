@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --border-color: #03e9f4;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.flash-btn {
+  letter-spacing: 2px;
+  font-size: 40px;
+  user-select: none;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  color: var(--border-color);
+  overflow: hidden;
+}
+
+.flash-btn:hover {
+  box-shadow: 0 0 5px var(--border-color), 0 0 25px var(--border-color),
+    0 0 50px var(--border-color), 0 0 100px var(--border-color);
+  background-color: var(--border-color);
+  color: white;
+}
+
+.flash-btn span {
+  position: absolute;
+  display: block;
+}
+
+.flash-btn .top {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 8px;
+  background-image: linear-gradient(90deg, transparent, var(--border-color));
+  animation: top 1s linear infinite;
+}
+
+.flash-btn .left {
+  bottom: -100%;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-image: linear-gradient(0deg, transparent, var(--border-color));
+  animation: left 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.flash-btn .right {
+  top: -100%;
+  right: 0;
+  width: 8px;
+  height: 100%;
+  background-image: linear-gradient(180deg, transparent, var(--border-color));
+  animation: right 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+.flash-btn .bottom {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 8px;
+  background-image: linear-gradient(-270deg, transparent, var(--border-color));
+  animation: bottom 1s linear infinite;
+  /* animation-delay: 0.5s; */
+}
+
+@keyframes left {
+  to {
+    bottom: 100%;
+  }
+}
+
+@keyframes top {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes right {
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes bottom {
+  to {
+    right: 100%;
+  }
+}

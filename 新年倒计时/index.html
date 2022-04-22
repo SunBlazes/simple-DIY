@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link
+		  rel="stylesheet"
+		  href="index.css"
+		>
+	</head>
+	<body>
+		<div class="container">
+			<h2><span>Countdown to New Year</span>2021</h2>
+			<div class="countdown">
+				<div id="day"></div>
+				<div id="hour"></div>
+				<div id="minute"></div>
+				<div id="second"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			let start = new Date("2021-1-1").getTime();
+
+			function newYear() {
+				let current = new Date().getTime(),
+					gap = start - current;
+
+				let second = 1000;
+				let minute = second * 60;
+				let hour = minute * 60;
+				let day = hour * 24;
+
+				let d = Math.floor(gap / day);
+				let h = Math.floor((gap % day) / hour);
+				let m = Math.floor((gap % hour) / minute);
+				let s = Math.floor((gap % minute) / second);
+
+				document.querySelector('#day').innerText = d;
+				document.querySelector('#hour').innerText = h;
+				document.querySelector('#minute').innerText = m;
+				document.querySelector('#second').innerText = s;
+			}
+
+			function commence() {
+				setTimeout(() => {
+					newYear();
+					commence();
+				}, 1)
+			}
+			commence();
+		</script>
+	</body>
+</html>

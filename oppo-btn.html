@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			:root {
+				height: 100%;
+			}
+			body {
+				height: 100%;
+				display: flex;
+			}
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			#btn {
+				width: 400px;
+				height: 200px;
+				background-color: rgba(0, 0, 0, .1);
+				margin: auto auto;
+				border-radius: 8em;
+				position: relative;
+				transform: scale(.2);
+			}
+			#round {
+				position: absolute;
+				top: 50%;
+				left: 20px;
+				height: 150px;
+				width: 150px;
+				border-radius: 75px;
+				background-color: white;
+				transform: translateY(-50%);
+			}
+			#round::after {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				right: 20px;
+				bottom: 20px;
+				content: '';
+				background-color: rgba(0, 0, 0, .1);
+				border-radius: 100%;
+			}
+			#round.right::after {
+				background-color: white !important;
+			}
+			@keyframes round-left {
+				from{ transform: translateX(0) translateY(-50%); width: 280px; }
+				99% { width: 150px; }
+				to{ transform: translateX(210px) translateY(-50%); }
+			}
+			@keyframes round-right {
+				from{ transform: translateX(80px) translateY(-50%); width: 280px; }
+				99% { width: 150px; }
+				to{ transform: translateX(0) translateY(-50%); }
+			}
+		</style>
+	</head>
+	<body>
+		<div id="btn">
+			<div id="round"></div>
+		</div>
+		<script type="text/javascript">
+			let btn = document.getElementById('btn');
+			let round = document.getElementById('round');
+			round.onclick = function () {
+				if(this.style.animationName == 'round-left') {
+					this.style.animation = 'round-right .3s ease-out forwards';
+					btn.style.backgroundColor = 'rgba(0, 0, 0, .1)'
+					round.className = '';
+				}else {
+					this.style.animation = 'round-left .3s ease-in forwards';
+					btn.style.backgroundColor = 'rgba(0, 255, 0, .4)';
+					round.className += 'right';
+				}
+			}
+		</script>
+	</body>
+</html>

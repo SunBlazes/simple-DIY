@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script
+      src="jquery-3.4.1.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="iconfont/iconfont.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img src="imgs/wix-logo.svg" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="caption">
+          <h1>登入</h1>
+          <p>第一次用Wix嗎？<a href="#">注册</a></p>
+        </div>
+        <form action="">
+          <div class="left clearfix">
+            <div style="float: right;">
+              <div class="email">
+                <input type="text" />
+                <div class="line"></div>
+              </div>
+              <div class="password" style="margin-top: 20px;">
+                <input type="text" />
+                <div class="line"></div>
+              </div>
+              <div style="margin-top: 15px;">
+                <div class="remember_me">
+                  <i class="iconfont"></i>
+                </div>
+                <span>記住我</span>
+                <a href="#" style="float: right; color: #162d3d;">
+                  忘記密碼?
+                </a>
+              </div>
+              <div class="btn">
+                <button>登入</button>
+              </div>
+            </div>
+          </div>
+          <div class="right clearfix">
+            <div class="right-wrapper">
+              <div class="facebook clearfix">
+                <div class="img">
+                  <img
+                    src="imgs/facebook-logo.svg"
+                    style="width: 15px; height: 23px;"
+                  />
+                </div>
+                <div class="text">
+                  <span>繼續使用FaceBook</span>
+                </div>
+              </div>
+              <div class="google clearfix" style="margin-top: 10px;">
+                <div class="img">
+                  <img
+                    src="imgs/google-logo.svg"
+                    style="width: 20px; height: 20px;"
+                  />
+                </div>
+                <div class="text">
+                  <span>繼續使用Google</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile_display">
+            <p class="email_tip">或者使用您的電子郵件</p>
+            <div class="mobile-wrapper">
+              <div class="email">
+                <input type="text" />
+                <div class="line"></div>
+              </div>
+              <div class="email_click_display">
+                <div class="password">
+                  <input type="text" />
+                  <div class="line"></div>
+                </div>
+                <div class="forget_pwd">
+                  <a href="#">忘記密碼</a>
+                </div>
+                <div class="confirm">
+                  <button>登入</button>
+                </div>
+                <div class="mobile_footer clearfix">
+                  <div class="fl">
+                    <a href="javascript:;">或登入</a>
+                  </div>
+                  <div class="fr">
+                    <img
+                      src="imgs/google-logo.svg"
+                      alt=""
+                      style="width: 20px; height: 20px;"
+                    />
+                  </div>
+                  <div class="fr" style="margin-right: 5px;">
+                    <img
+                      src="imgs/facebook-logo.svg"
+                      style="width: 15px; height: 23px;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="footer">
+          <p>
+            *登入表示您同意我們的<a href="#">使用條款</a>，及收到Wix電子郵件和
+          </p>
+          <p>更新，並承認您已閱讀我們的<a href="#">隱私權政策</a>。</p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      let input = $("input[type=text]")
+      let reme_me = $(".remember_me")
+      let button = $("button")
+
+      // 输入框底部长度增加
+      input.focus(function () {
+        $(this).siblings(".line").css({
+          width: "100%",
+          transition: "width .3s ease-in-out",
+        })
+        $(this).parent().addClass("focus")
+      })
+
+      // 页面进入自动聚焦电子邮箱的输入框
+      input.eq(0).trigger("focus")
+
+      // 输入框失去焦点后长度变0
+      input.blur(function () {
+        $(this).siblings(".line").css({
+          width: "0%",
+          transition: "",
+        })
+        $(this).parent().removeClass("focus")
+      })
+
+      // 有无勾
+      reme_me.click(function () {
+        $(this).children().toggleClass("checked")
+      })
+
+      let email = $(".mobile-wrapper .email")
+
+      email.click(function () {
+        $(this).parent().css({
+          top: "-150px",
+        })
+        $(".right").addClass("mobile")
+        $(".email_tip").addClass("mobile")
+        $(".email_click_display").addClass("display")
+      })
+
+      // 清除移动端的样式
+      $(window).resize(function () {
+        if (document.body.offsetWidth > 832) {
+          $(".right").removeClass("mobile")
+          $(".email_tip").removeClass("mobile")
+          $(".email_click_display").removeClass("display")
+          email.parent().css({
+            top: "0px",
+          })
+        }
+      })
+
+      // 禁止按钮点击默认行为
+      button.click(function () {
+        return false
+      })
+    </script>
+  </body>
+</html>

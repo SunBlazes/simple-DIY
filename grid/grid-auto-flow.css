@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 920px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* gap: 0 10px; */
+  /* 从列开始排序 */
+  /* grid-auto-flow: column; */
+  grid-auto-flow: row dense;
+}
+
+.container div {
+  text-align: center;
+  line-height: 300px;
+  font-size: 30px;
+}
+
+.container div:nth-child(1) {
+  background-color: red;
+}
+
+.container div:nth-child(2) {
+  background-color: green;
+}
+
+.container div:nth-child(3) {
+  background-color: blue;
+}
+
+.container div:nth-child(4) {
+  background-color: beige;
+}
+
+.container div:nth-child(5) {
+  background-color: skyblue;
+}
+
+.container div:nth-child(6) {
+  background-color: yellow;
+}
+
+.container div:nth-child(7) {
+  background-color: deeppink;
+}
+
+.container div:nth-child(8) {
+  background-color: darkred;
+}
+
+.container div:nth-child(9) {
+  background-color: pink;
+}
